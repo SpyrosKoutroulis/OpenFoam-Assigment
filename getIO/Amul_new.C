@@ -52,6 +52,7 @@ void Foam::lduMatrix::Amul
     //Log Inputs
     if (isFirstTime) {
     logFile << "nCells: " << diag().size() << "\n";
+    logFile << "nFaces: " << upper().size() << "\n";
     logFile << "diagPtr: ";
     for (label cell=0; cell<diag().size(); cell++)
     {
@@ -61,6 +62,26 @@ void Foam::lduMatrix::Amul
     for (label cell=0; cell<diag().size(); cell++)
     {
         logFile << psiPtr[cell] << " ";
+    }
+    logFile << "\nuPtr: ";
+    for (label face=0; face<upper().size(); face++)
+    {
+        logFile << uPtr[face] << " ";
+    }
+    logFile << "\nlPtr: ";
+    for (label face=0; face<upper().size(); face++)
+    {
+        logFile << lPtr[face] << " ";
+    }
+    logFile << "\nupperPtr: ";
+    for (label face=0; face<upper().size(); face++)
+    {
+        logFile << upperPtr[face] << " ";
+    }
+    logFile << "\nlowerPtr: ";
+    for (label face=0; face<upper().size(); face++)
+    {
+        logFile << lowerPtr[face] << " ";
     }
     logFile << "\n";
     }
