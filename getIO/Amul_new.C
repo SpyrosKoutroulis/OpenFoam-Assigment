@@ -106,7 +106,7 @@ void Foam::lduMatrix::Amul
     //Edited Code
     //Log Inputs
     if (isFirstTime) {
-    logFile << "Updated ApsiPtr: ";
+    logFile << "ApsiPtr: ";
     for (label cell=0; cell<Apsi.size(); cell++)
     {
         logFile << ApsiPtr[cell] << " ";
