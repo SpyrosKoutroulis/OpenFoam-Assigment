@@ -1,3 +1,10 @@
+#include "lduMatrix.H"
+//Edited Code
+#include <fstream>
+#include <iomanip>
+#include <limits>
+//End code
+
 void Foam::lduMatrix::Amul
 (
     solveScalarField& Apsi,
@@ -20,6 +27,8 @@ void Foam::lduMatrix::Amul
         Info << "Error: Could not open file" << endl;
         return;
     }
+
+    logFile << std::setprecision(50) << std::fixed;
     //End of code
 
     solveScalar* __restrict__ ApsiPtr = Apsi.begin();
